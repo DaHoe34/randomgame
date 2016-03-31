@@ -15,5 +15,13 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="지금 나의 상황은"
+        android:id="@+id/btn_show_me_the_chicken"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
