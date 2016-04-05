@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try{
             Toast.makeText(this, name + "씨,배가 고파용....", Toast.LENGTH_LONG).show();  //show는 보여주는 역할
             Intent intent = new Intent(this,ResultActivity.class);
-            startActivity(intent);
+            intent.putExtra("name",name);
+            intent.putExtra("age",10);
         }
         catch (NullPointerException e){
             Toast.makeText(this, "이름을 입력해 주세요!! ", Toast.LENGTH_LONG).show();  //show는 보여주는 역할
