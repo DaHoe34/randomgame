@@ -1,5 +1,6 @@
 package kr.hs.emirim.dahoe0304.monchicken;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,5 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Toast.makeText(this, "배가 고파용....", Toast.LENGTH_LONG).show();  //show는 보여주는 역할
+        Intent intent = new Intent(this,ResultActivity.class);
+        startActivity(intent);
+
     }
 }
