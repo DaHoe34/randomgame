@@ -22,11 +22,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mButton = (Button) findViewById(R.id.btn_show_me_the_chicken);
         mButton.setOnClickListener(this);
     }
-
     @Override
     protected void onResume() {
         super.onResume();
-        mName.setText("");
+        mName.setText(null);
     }
 
     /**  '자바독입니다' 라고 표시해줌
@@ -36,9 +35,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public void onClick(View v) {
-        Toast.makeText(this, "배가 고파용....", Toast.LENGTH_LONG).show();  //show는 보여주는 역할
-        Intent intent = new Intent(this,ResultActivity.class);
-        startActivity(intent);
-
+        String name = mName.getText().toString();
+//       /* if(name==null){
+//            Toast.makeText(this, "이름을 입력해 주세요!! ", Toast.LENGTH_LONG).show();  //show는 보여주는 역할
+//        }else{
+//          Toast.makeText(this, name + "씨,배가 고파용....", Toast.LENGTH_LONG).show();  //show는 보여주는 역할
+//            Intent intent = new Intent(this,ResultActivity.class);
+//            startActivity(intent);
+//        }
+//        */
+        try{
+            Toast.makeText(this, name + "씨,배가 고파용....", Toast.LENGTH_LONG).show();  //show는 보여주는 역할
+            Intent intent = new Intent(this,ResultActivity.class);
+            startActivity(intent);
+        }
+        catch (NullPointerException e){
+            Toast.makeText(this, "이름을 입력해 주세요!! ", Toast.LENGTH_LONG).show();  //show는 보여주는 역할
+        }
+        catch (Exception e){
+            Toast.makeText(this, "뭔지 모르겠지만 잘 안됩니다..", Toast.LENGTH_LONG).show();  //show는 보여주는 역할
+        }
     }
 }
