@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mName = (EditText) findViewById(R.id.name);
         mButton = (Button) findViewById(R.id.btn_show_me_the_chicken);
         mButton.setOnClickListener(this);
+
     }
     @Override
     protected void onResume() {
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this,ResultActivity.class);
             intent.putExtra("name",name);
             intent.putExtra("age",10);
+            startActivity(intent);
         }
         catch (NullPointerException e){
             Toast.makeText(this, "이름을 입력해 주세요!! ", Toast.LENGTH_LONG).show();  //show는 보여주는 역할
